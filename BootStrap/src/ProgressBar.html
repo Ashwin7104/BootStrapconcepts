@@ -1,0 +1,40 @@
+
+<html>
+<head>
+    <title>Grid Layout</title>
+    <link type="text/css" rel="stylesheet" href="../lib/css/bootstrap.min.css"/>
+    <script type="text/javascript" src="../lib/js/jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="../lib/js/bootstrap.js"></script>
+<!--[if lt IE 9]>
+      <script src = "https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src = "https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+      <![endif]-->
+</head>
+<body>
+  
+<div class = "progress progress-striped active">
+   <div class = "progress-bar progress-bar-success" role = "progressbar" 
+      aria-valuenow = "0" aria-valuemin = "0" aria-valuemax = "100" style = "width: 0%;">
+      
+      <span id="percent">0% Complete</span>
+   </div>
+</div>
+  <script type="text/javascript">
+        $(document).ready(function() {
+           window.percent = 0;
+    window.progressInterval = window.setInterval( function(){
+       if(window.percent<100)
+        {
+        console.log(window.percent);
+        
+            window.percent++;
+            $(".progress-bar").css("width",window.percent+'%');
+            $(".progress-bar").attr("aria-valuenow", window.percent+'%');
+            $("#percent").text(window.percent+'%');
+        }
+    }, 100 );
+        });
+    </script>
+</body>
+</html>
+
